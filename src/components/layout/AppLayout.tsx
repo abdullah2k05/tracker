@@ -13,13 +13,13 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-romantic-pink-50 text-romantic-text selection:bg-romantic-pink-200">
+    <div className="relative min-h-screen overflow-hidden bg-romantic-purple-50 text-romantic-text selection:bg-romantic-purple-200">
       {/* Animated Background Blobs */}
-      <div className="fixed inset-0 z-0 opacity-70 pointer-events-none">
-        <div className="absolute top-0 -left-4 w-72 h-72 bg-romantic-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob" />
-        <div className="absolute top-0 -right-4 w-72 h-72 bg-romantic-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000" />
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-romantic-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-romantic-lavender-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 pulse" />
+      <div className="fixed inset-0 z-0 opacity-80 pointer-events-none">
+        <div className="absolute top-0 -left-10 w-96 h-96 bg-romantic-purple-400/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" />
+        <div className="absolute top-0 -right-10 w-96 h-96 bg-romantic-purple-200/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" />
+        <div className="absolute -bottom-20 left-20 w-[30rem] h-[30rem] bg-romantic-purple-300/30 rounded-full mix-blend-multiply filter blur-[100px] opacity-70 animate-blob animation-delay-4000" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-violet-200/20 rounded-full mix-blend-multiply filter blur-[120px] opacity-50 pulse" />
       </div>
 
       {/* Floating Hearts - Client Only */}
@@ -39,11 +39,11 @@ const FloatingHearts = () => {
   const [hearts, setHearts] = useState<Array<{id: number, x: string, duration: number, delay: number, emoji: string}>>([]);
 
   useEffect(() => {
-    const emojis = ["💕", "🌸", "✨", "🦋", "💖"];
+    const emojis = ["💜", "🔮", "🦄", "☪️", "✨", "🎆", "🌸"];
     const newHearts = Array.from({ length: 15 }).map((_, i) => ({
       id: i,
       x: Math.random() * 100 + "vw",
-      duration: Math.random() * 10 + 10,
+      duration: 8 + Math.random() * 4, // 8-12s float as per requirements
       delay: Math.random() * 20,
       emoji: emojis[Math.floor(Math.random() * emojis.length)],
     }));
@@ -58,23 +58,24 @@ const FloatingHearts = () => {
         <motion.div
           key={heart.id}
           initial={{
-            y: "100vh",
+            y: "110vh",
             x: heart.x,
             opacity: 0,
             scale: 0.5,
           }}
           animate={{
             y: "-10vh",
-            opacity: [0, 1, 0],
-            scale: [0.5, 1, 0.5],
+            opacity: [0, 1, 1, 0],
+            scale: [0.5, 1.2, 1, 0.8],
+            rotate: [0, 10, -10, 0],
           }}
           transition={{
-            duration: heart.duration, // 10-20s float
+            duration: heart.duration,
             repeat: Infinity,
             delay: heart.delay,
             ease: "linear",
           }}
-          className="absolute text-2xl md:text-4xl text-romantic-pink-300/40"
+          className="absolute text-2xl md:text-3xl filter drop-shadow-[0_0_8px_rgba(155,89,182,0.4)]"
         >
           {heart.emoji}
         </motion.div>

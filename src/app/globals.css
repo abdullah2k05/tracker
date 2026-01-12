@@ -4,23 +4,27 @@
 
 @layer base {
   body {
-    @apply bg-romantic-pink-50 text-romantic-text overflow-x-hidden;
-    font-family: "Inter", sans-serif; /* Setup in Layout if not default */
+    @apply bg-romantic-purple-50 text-romantic-text overflow-x-hidden;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
   }
 }
 
 @layer utilities {
   .glass-card {
-    @apply bg-romantic-glass backdrop-blur-md border border-romantic-glassBorder shadow-lg rounded-3xl;
+    @apply bg-romantic-glass backdrop-blur-xl border border-romantic-glassBorder shadow-2xl rounded-3xl;
   }
 
   .glass-button {
-    @apply bg-white/40 hover:bg-white/60 backdrop-blur-sm border border-white/50 transition-all duration-300 shadow-sm active:scale-95 text-romantic-text font-medium rounded-xl px-6 py-3;
+    @apply bg-romantic-purple-300/30 hover:bg-romantic-purple-300/50 backdrop-blur-md border border-romantic-purple-100/50 transition-all duration-300 shadow-md active:scale-95 text-romantic-text font-bold rounded-full px-8 py-3;
   }
 
   .text-glow {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
-      0 0 20px rgba(255, 182, 193, 0.5);
+    text-shadow: 0 0 15px rgba(155, 89, 182, 0.4),
+                 0 0 30px rgba(155, 89, 182, 0.2);
   }
 }
 
@@ -30,13 +34,13 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(243, 229, 245, 0.5);
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-romantic-pink-200 rounded-full;
+  @apply bg-romantic-purple-200 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-romantic-pink-300;
+  @apply bg-romantic-purple-300;
 }

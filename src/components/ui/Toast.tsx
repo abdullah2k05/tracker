@@ -28,25 +28,27 @@ export const Toast = ({ message, type, isVisible, onClose, duration = 3000 }: To
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          initial={{ opacity: 0, y: 100, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 50, scale: 0.9 }}
-          className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] w-full max-w-sm px-4"
+          exit={{ opacity: 0, y: 100, scale: 0.9 }}
+          className="fixed bottom-10 left-1/2 -translate-x-1/2 z-[100] w-full max-w-sm px-4"
         >
-          <div className={`glass-card p-4 flex items-center gap-3 shadow-2xl border-white/50 ${
-            type === "success" ? "bg-green-50/20" : "bg-red-50/20"
-          }`}>
-            <div className={type === "success" ? "text-green-500" : "text-red-500"}>
-              {type === "success" ? <CheckCircle2 size={24} /> : <AlertCircle size={24} />}
+          <div className="glass-card !bg-white/20 !backdrop-blur-2xl p-5 flex items-center gap-4 shadow-[0_20px_50px_rgba(142,68,173,0.3)] border border-romantic-purple-300/50">
+            <div className="shrink-0">
+              {type === "success" ? (
+                <CheckCircle2 className="text-romantic-purple-500" size={28} />
+              ) : (
+                <AlertCircle className="text-red-500" size={28} />
+              )}
             </div>
-            <p className="flex-1 text-sm font-medium text-romantic-text">
+            <p className="flex-1 text-sm font-bold text-romantic-text/90 tracking-tight leading-snug">
               {message}
             </p>
             <button
               onClick={onClose}
-              className="text-romantic-text/40 hover:text-romantic-text transition-colors"
+              className="text-romantic-purple-400 hover:text-romantic-purple-600 transition-colors p-1"
             >
-              <X size={18} />
+              <X size={20} />
             </button>
           </div>
         </motion.div>

@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Poppins, Roboto } from "next/font/google";
 import "./globals.css";
 import { AppLayout } from "@/components/layout/AppLayout";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
+const poppins = Poppins({ 
+  subsets: ["latin"], 
+  weight: ["700"],
+  variable: "--font-poppins" 
+});
+
+const roboto = Roboto({ 
+  subsets: ["latin"], 
+  weight: ["400"],
+  variable: "--font-roboto" 
+});
 
 export const metadata: Metadata = {
   title: "Romantic Wellness Tracker",
@@ -18,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${outfit.variable} font-sans antialiased`}>
+      <body className={`${poppins.variable} ${roboto.variable} font-sans antialiased`}>
         <AppLayout>{children}</AppLayout>
       </body>
     </html>
