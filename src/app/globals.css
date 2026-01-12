@@ -1,26 +1,42 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-romantic-pink-50 text-romantic-text overflow-x-hidden;
+    font-family: "Inter", sans-serif; /* Setup in Layout if not default */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .glass-card {
+    @apply bg-romantic-glass backdrop-blur-md border border-romantic-glassBorder shadow-lg rounded-3xl;
+  }
+
+  .glass-button {
+    @apply bg-white/40 hover:bg-white/60 backdrop-blur-sm border border-white/50 transition-all duration-300 shadow-sm active:scale-95 text-romantic-text font-medium rounded-xl px-6 py-3;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(255, 182, 193, 0.5);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-romantic-pink-200 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-romantic-pink-300;
 }

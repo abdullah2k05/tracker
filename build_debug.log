@@ -1,0 +1,33 @@
+
+> period-tracker@0.1.0 build
+> next build
+
+⚠ `eslint` configuration in next.config.ts is no longer supported. See more info here: https://nextjs.org/docs/app/api-reference/cli/next#next-lint-options
+⚠ Invalid next.config.ts options detected: 
+⚠     Unrecognized key(s) in object: 'eslint'
+⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+▲ Next.js 16.1.1 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 8.6s
+  Skipping validation of types
+  Collecting page data using 11 workers ...
+Error: Failed to collect configuration for /
+    at ignore-listed frames {
+  [cause]: ReferenceError: Inter is not defined
+      at module evaluation (W:\project\period-tracker\.next\server\chunks\ssr\src_b1f9d104._.js:1:962)
+      at instantiateModule (W:\project\period-tracker\.next\server\chunks\ssr\[turbopack]_runtime.js:740:9)
+      at getOrInstantiateModuleFromParent (W:\project\period-tracker\.next\server\chunks\ssr\[turbopack]_runtime.js:763:12)
+      at Context.esmImport [as i] (W:\project\period-tracker\.next\server\chunks\ssr\[turbopack]_runtime.js:228:20)
+      at module evaluation (W:\project\period-tracker\.next\server\chunks\ssr\[root-of-the-server]__a4bbd779._.js:1:184)
+      at instantiateModule (W:\project\period-tracker\.next\server\chunks\ssr\[turbopack]_runtime.js:740:9)
+      at getOrInstantiateModuleFromParent (W:\project\period-tracker\.next\server\chunks\ssr\[turbopack]_runtime.js:763:12)
+      at Context.commonJsRequire [as r] (W:\project\period-tracker\.next\server\chunks\ssr\[turbopack]_runtime.js:249:12)
+      at H.layout (W:\project\period-tracker\.next\server\chunks\ssr\_b1c71f8f._.js:1:866)
+}
+
+> Build error occurred
+Error: Failed to collect page data for /
+    at ignore-listed frames {
+  type: 'Error'
+}
