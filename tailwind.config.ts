@@ -20,9 +20,21 @@ const config: Config = {
             500: "#8e44ad",
             DEFAULT: "#8e44ad",
           },
+          pink: {
+            50: "#fdf2f8",
+            100: "#fce7f3",
+            200: "#fbcfe8",
+            300: "#f9a8d4",
+            400: "#f472b6",
+            500: "#ec4899",
+            DEFAULT: "#ec4899",
+          },
+          lavender: {
+            400: "#b39ddb",
+          },
           text: "#4a148c", // Darker purple for better contrast
-          glass: "rgba(255, 255, 255, 0.15)",
-          glassBorder: "rgba(214, 162, 232, 0.4)", // tinted border
+          glass: "rgba(255, 255, 255, 0.4)", // brighter glass
+          glassBorder: "rgba(255, 255, 255, 0.6)", // clearer border
         },
       },
       fontFamily: {

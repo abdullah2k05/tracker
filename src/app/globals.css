@@ -15,11 +15,11 @@
 
 @layer utilities {
   .glass-card {
-    @apply bg-romantic-glass backdrop-blur-xl border border-romantic-glassBorder shadow-2xl rounded-3xl;
+    @apply bg-romantic-glass/70 backdrop-blur-2xl border border-white/60 shadow-[0_8px_32px_rgba(155,89,182,0.15)] rounded-[2rem] transition-all duration-500 hover:shadow-[0_12px_40px_rgba(155,89,182,0.25)];
   }
 
   .glass-button {
-    @apply bg-romantic-purple-300/30 hover:bg-romantic-purple-300/50 backdrop-blur-md border border-romantic-purple-100/50 transition-all duration-300 shadow-md active:scale-95 text-romantic-text font-bold rounded-full px-8 py-3;
+    @apply bg-white/40 hover:bg-white/60 backdrop-blur-lg border border-white/80 transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95 text-romantic-text font-bold rounded-full px-8 py-3;
   }
 
   .text-glow {

@@ -3,6 +3,7 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { WellnessProvider } from "@/providers/WellnessProvider";
 
 export const AppLayout = ({ children }: { children: React.ReactNode }) => {
   const [mounted, setMounted] = useState(false);
@@ -28,7 +29,9 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
       {/* Glass Container - Always Rendered */}
       <main className="relative z-10 container mx-auto px-4 py-8 min-h-screen flex flex-col items-center">
         <div className="w-full max-w-md md:max-w-2xl lg:max-w-4xl">
-           {children}
+           <WellnessProvider>
+             {children}
+           </WellnessProvider>
         </div>
       </main>
     </div>
